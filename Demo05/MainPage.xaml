@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo05.MainPage" Shell.NavBarIsVisible="False"> 
+    <ContentPage.Resources>
+        <Style TargetType="VerticalStackLayout">
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="Spacing" Value="20"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="*,*">
+        <VerticalStackLayout HorizontalOptions="FillAndExpand">
+            <Label Text="URL 파일 -> FTP"  FontAttributes="Bold" FontSize="20" HorizontalTextAlignment="Center"/>
+            <Entry x:Name="entryUrl" MinimumWidthRequest="350" MaximumWidthRequest="600" HorizontalOptions="Center"/>
+            <Button x:Name="btnUrl" Text="업로드" HorizontalOptions="Center" Clicked="btnUrl_Clicked"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1">
+            <Label Text="파일 직접 선택"  FontAttributes="Bold" FontSize="20"/>
+            <Button x:Name="btnFileUpload" Text="업로드" Clicked="btnFileUpload_Clicked"/>
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>
