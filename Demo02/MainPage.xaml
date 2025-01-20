@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo02.MainPage" Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <Grid>
+            <VerticalStackLayout VerticalOptions="Center"
+            Padding="30,0"
+            Spacing="25">
+
+                <Label
+                Text="영화 명대사 가져오기"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+                <Label
+                Text="AI는 거들뿐"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+                <Button
+                x:Name="CounterBtn"
+                Text="Click me" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" />
+            </VerticalStackLayout>
+            <ActivityIndicator BackgroundColor="#3d3d3d"  Color="#3DCA8B" HorizontalOptions="Center" VerticalOptions="Center" x:Name="busy" IsRunning="False"  IsVisible="False"/>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
