@@ -41,7 +41,7 @@ namespace Demo01
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                 // API URL 설정
-                string apiUrl = "http://n8ndemo.jojangwon.com/webhook/feedback";
+                string apiUrl = "https://n8ndemo.jojangwon.com/webhook/feedback";
 
                 // POST 요청
                 var response = await _httpClient.PostAsync(apiUrl, content);

@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿#if ANDROID
+using Android.Content.Res; 
+#endif
+using Microsoft.Extensions.Logging;
 
 namespace Demo01
 {
@@ -22,6 +25,15 @@ namespace Demo01
             {
 #if ANDROID
                 handler.PlatformView.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                handler.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
+#endif
+            });
+
+            Microsoft.Maui.Handlers.EditorHandler.Mapper.AppendToMapping(nameof(Editor), (handler, view) =>
+            {
+#if ANDROID
+                handler.PlatformView.SetBackgroundColor(Android.Graphics.Color.Transparent);
+                handler.PlatformView.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
 #endif
             });
             return builder.Build();
